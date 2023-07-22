@@ -50,11 +50,7 @@ import hashlib
 # Create a Record Data Class that consists of the `sender`, `receiver`, and
 # `amount` attributes
 # YOUR CODE HERE
-@dataclass
-class Record:
-    sender: str
-    receiver: str
-    amount: float
+Record=pd.DataFrame([{"sender":str, "receiver":str, "amount":float}])
     
 
 ################################################################################
@@ -196,7 +192,7 @@ if st.button("Add Block"):
     # which is set equal to a `Record` that contains the `sender`, `receiver`,
     # and `amount` values
     new_block = Block(
-        record=Record(sender, receiver, amount),
+        data=Record,
         creator_id=42,
         prev_hash=prev_block_hash
     )
